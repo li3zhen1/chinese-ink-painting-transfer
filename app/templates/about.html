@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<style>
+    @font-face {
+        font-family: 'AvantGardeThin';
+        src: url(/fonts/Product-Sans-Regular.ttf) format("truetype");
+    }
+
+    @font-face {
+        font-family: 'AvantGardeBold';
+        src: url(/fonts/Product-Sans-Bold.ttf) format("truetype");
+    }
+
+    @font-face {
+        font-family: 'AvantGardeMedium';
+        src: url(/fonts/Product-Sans-Regular.ttf) format("truetype");
+    }
+
+
+    @media screen and (max-width: 960px) {
+        .text-border {
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 4pt;
+            line-height: 22pt;
+            padding: 6pt;
+        }
+
+        .header {
+            font-size: 60pt;
+            padding: 2pt;
+            font-family: 'AvantGardeBold';
+            float: inline-start;
+        }
+    }
+
+    @media screen and (min-width: 960px) {
+        .text-border {
+            background-color: rgba(255, 255, 255, 0);
+            padding: 6pt;
+            border-radius: 4pt;
+            line-height: 24pt;
+        }
+
+        .header {
+            font-size: 82pt;
+            padding: 2pt;
+            font-family: 'AvantGardeBold';
+            float: inline-start;
+        }
+    }
+
+    .text-color-coal-black {
+        color: rgb(20, 20, 20)
+    }
+
+
+    .header-descriptor {
+        max-width: 38rem;
+        font-size: 16pt;
+        font-family: 'AvantGardeThin';
+        margin: 4pt;
+    }
+
+    .button {
+        font-size: 16pt;
+        font-family: 'AvantGardeMedium';
+
+        text-align: center;
+        line-height: 38px;
+        height: 48pt;
+        width: 160pt;
+        padding: 0 40px;
+
+        display: inline-block;
+        appearance: none;
+        cursor: pointer;
+        border: none;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition-property: all;
+        transition-property: all;
+        -webkit-transition-duration: .3s;
+        transition-duration: .3s;
+
+        background-color: rgba(42, 139, 136, 1);
+        border-collapse: collapse;
+        box-shadow: 0 6.4px 14.4px 0 rgba(72, 197, 160, 0.2), 0 1.2px 3.6px 0 rgba(100, 255, 229, 0.2);
+    }
+
+
+    .button:hover {
+        background-color: rgb(39, 156, 152);
+        text-decoration: none;
+        box-shadow: 0 25.6px 57.6px 0 rgba(72, 197, 160, 0.2), 0 4.8px 14.4px 0 rgba(100, 255, 229, 0.2);
+        outline: none;
+    }
+
+    .sub-button {
+        font-size: 16pt;
+        font-family: 'AvantGardeMedium';
+
+        text-align: center;
+        line-height: 38px;
+        height: 48pt;
+        width: 160pt;
+        padding: 0 40px;
+
+        display: inline-block;
+        appearance: none;
+        cursor: pointer;
+        border: 3px solid rgb(42, 139, 136);
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition-property: all;
+        transition-property: all;
+        -webkit-transition-duration: .3s;
+        transition-duration: .3s;
+        background: transparent;
+    }
+
+
+
+
+    .sub-button:hover {
+        background-color: rgba(39, 156, 152, 0.2);
+        text-decoration: none;
+        box-shadow: 0 25.6px 57.6px 0 rgba(72, 197, 160, 0.1), 0 4.8px 14.4px 0 rgba(100, 255, 229, 0.1);
+        outline: none;
+    }
+
+    .shape-pill {
+        margin: 20pt 30pt 20pt 2pt;
+        border-radius: 28pt;
+    }
+
+    .opaque-grid {
+        z-index: 2;
+        padding: 0 8% 0 8%;
+    }
+
+    .nav-bar {
+        height: 120pt;
+    }
+
+    .nav-left {
+        float: left;
+        font-size: 16pt;
+        font-family: 'AvantGardeMedium';
+        padding: 2pt;
+        margin: 16pt 0 0 4pt;
+        cursor: pointer;
+        opacity: 0.5;
+    }
+
+    .nav-right-chosen {
+        float: right;
+        font-size: 16pt;
+        font-family: 'AvantGardeThin';
+        padding: 2pt;
+        margin: 16pt 4pt 0 28pt;
+        cursor: pointer;
+        opacity: 0.9;
+    }
+
+    .nav-right {
+        float: right;
+        font-size: 16pt;
+        font-family: 'AvantGardeThin';
+        padding: 2pt;
+        margin: 16pt 4pt 0 28pt;
+        cursor: pointer;
+        opacity: 0.5;
+    }
+
+    .nav-right:hover {
+        opacity: 1;
+    }
+
+    .nav-right-chosen:hover {
+        opacity: 1;
+    }
+    .nav-left:hover {
+        opacity: 1;
+    }
+
+
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .playground {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .background-images {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+        float: right;
+    }
+
+    .image-src {
+        float: right;
+        height: 100%;
+        width: auto;
+    }
+
+    .subheader {
+        font-size: 30pt;
+        font-family: 'AvantGardeMedium';
+        display: inline;
+        margin: 10pt 6pt 10pt 6pt;
+    }
+
+    .text-color-white {
+        color: white;
+    }
+
+    .text-color-dark-green {
+        color: rgb(42, 139, 136);
+    }
+
+    .placeholder {
+        display: none;
+        width: 10pt;
+        height: 10pt;
+    }
+
+    .texture-block {
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -2;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+        float: left;
+    }
+
+    .texture-image {
+        height: 100%;
+        width: 1949px;
+        float: left;
+    }
+</style>
+
+
+<head>
+    <header>
+        <title>Neural Painter</title>
+    </header>
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+</head>
+
+<body>
+    <div class='playground'>
+        <div class='texture-block'>
+            <img class='texture-image' src='/imagesrc/background-texture.jpg'>
+        </div>
+        <div class='background-images'>
+            <img class='image-src' src='/imagesrc/background-blured.png'>
+        </div>
+        <div class='opaque-grid'>
+            <div class='nav-bar'>
+                <div class="nav-left text-color-coal-black" onclick="location.href = '/'">Home</div>
+                <div class="nav-right-chosen text-color-coal-black" onclick="location.href = '/about'">About</div>
+                <div class="nav-right text-color-coal-black" onclick="location.href = '/credits'">Credits
+                </div>
+            </div>
+            <div class="header text-color-coal-black">Members</div>
+            <div class="header-descriptor text-color-coal-black text-border">
+                Zhou Xinyu, 1700013222@pku.edu.cn<br>
+                Zhang Wenbo, 1800012981@pku.edu.cn<br>
+                Li Zhen, 1800013025@pku.edu.cn<br>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+</html>

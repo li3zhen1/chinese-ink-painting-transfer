@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<style>
+    @font-face {
+        font-family: 'AvantGardeThin';
+        src: url(/fonts/Product-Sans-Regular.ttf) format("truetype");
+    }
+
+    @font-face {
+        font-family: 'AvantGardeBold';
+        src: url(/fonts/Product-Sans-Bold.ttf) format("truetype");
+    }
+
+    @font-face {
+        font-family: 'AvantGardeMedium';
+        src: url(/fonts/Product-Sans-Regular.ttf) format("truetype");
+    }
+
+
+    @keyframes fadein {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+
+        }
+    }
+
+    @-webkit-keyframes fadein {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+
+        }
+    }
+
+    @-moz-keyframes fadein {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+
+        }
+    }
+
+    @-o-keyframes fadein {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+
+        }
+    }
+
+    @-ms-keyframes fadein {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+
+        }
+    }
+
+    @media screen and (max-width: 960px) {
+        .button-width {
+            width: 260px;
+        }
+
+        .Instructor-typeface {
+            font-family: 'AvantGardeMedium';
+            font-size: 24pt;
+        }
+
+        .transfer-form-ground {
+            margin: 0 auto 0 auto;
+            width: 300px;
+        }
+
+        .image-fit-div {
+            animation: fadein 0.8s linear 1;
+            -webkit-animation: fadein 0.8s linear 1;
+            -moz-animation: fadein 0.8s linear 1;
+            -o-animation: fadein 0.8s linear 1;
+            -ms-animation: fadein 0.8s linear 1;
+            padding: 6pt 6pt 6pt 6pt;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 300px;
+            width: 300px;
+            margin: 0 auto 0 auto;
+            overflow: hidden;
+            border-radius: 8pt;
+            background-color: white;
+            box-shadow: 0 6.4px 14.4px 0 rgba(0, 0, 0, 0.18), 0 1.2px 3.6px 0 rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    @media screen and (min-width: 960px) {
+        .button-width {
+            width: 360px;
+        }
+
+        .transfer-form-ground {
+            margin: 0 auto 0 auto;
+            width: 460px;
+        }
+
+        .image-fit-div {
+            animation: fadein 0.8s linear 1;
+            -webkit-animation: fadein 0.8s linear 1;
+            -moz-animation: fadein 0.8s linear 1;
+            -o-animation: fadein 0.8s linear 1;
+            -ms-animation: fadein 0.8s linear 1;
+            padding: 6pt 6pt 6pt 6pt;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 460px;
+            width: 460px;
+            margin: 0 auto 0 auto;
+            overflow: hidden;
+            border-radius: 8pt;
+            background-color: white;
+            box-shadow: 0 6.4px 14.4px 0 rgba(0, 0, 0, 0.18), 0 1.2px 3.6px 0 rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    .header {
+        font-size: 70pt;
+        padding: 2pt;
+        font-family: 'AvantGardeBold';
+        float: inline-start;
+    }
+
+
+    .text-color-white {
+        color: white
+    }
+
+    .text-color-coal-black {
+        color: rgb(20, 20, 20)
+    }
+
+    .text-color-dark-green {
+        color: rgb(42, 139, 136);
+    }
+
+    .header-descriptor {
+        max-width: 45rem;
+        font-size: 18pt;
+        font-family: 'AvantGardeThin';
+        padding: 2pt;
+        margin: 4pt;
+
+    }
+
+    .button {
+        font-size: 16pt;
+        font-family: 'AvantGardeMedium';
+
+        text-align: center;
+        line-height: 38px;
+        height: 48pt;
+
+        padding: 0 40px;
+
+        display: inline-block;
+        appearance: none;
+        cursor: pointer;
+        border: none;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition-property: all;
+        transition-property: all;
+        -webkit-transition-duration: .3s;
+        transition-duration: .3s;
+
+        background-color: rgba(42, 139, 136, 1);
+        border-collapse: collapse;
+    }
+
+
+    .button:hover {
+        background-color: rgb(39, 156, 152);
+        text-decoration: none;
+        outline: none;
+    }
+
+    .shape-pill {
+        margin: 20pt auto 20pt auto;
+        border-radius: 25pt;
+    }
+
+    .opaque-grid {
+        padding: 0 8% 0 8%;
+    }
+
+    .nav-bar {
+        height: 60pt;
+    }
+
+    .nav-left {
+        float: left;
+        font-size: 16pt;
+        font-family: 'AvantGardeMedium';
+        padding: 2pt;
+        margin: 16pt 0 0 4pt;
+        cursor: pointer;
+        opacity: 0.5;
+    }
+
+    .nav-right {
+        float: right;
+        font-size: 16pt;
+        font-family: 'AvantGardeThin';
+        padding: 2pt;
+        margin: 16pt 4pt 0 28pt;
+        cursor: pointer;
+        opacity: 0.5;
+    }
+
+    .nav-right:hover {
+        opacity: 1;
+    }
+
+    .nav-left:hover {
+        opacity: 1;
+    }
+
+
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .playground {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .background-images {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+        float: right;
+    }
+
+    .image-src {
+        float: right;
+        height: 100%;
+        width: auto;
+    }
+
+    .subheader {
+        font-size: 30pt;
+        font-family: 'AvantGardeMedium';
+        display: inline;
+        margin: 10pt 6pt 10pt 6pt;
+    }
+
+    .placeholder {
+        display: none;
+        width: 10pt;
+        height: 10pt;
+    }
+
+    .texture-block {
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -2;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+        float: left;
+    }
+
+    .texture-image {
+        height: 100%;
+        width: 1949px;
+        float: left;
+    }
+
+
+
+    .right-flow {
+        float: right;
+    }
+
+    .left-flow {
+        float: left;
+    }
+
+    .image-fit-style {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 4pt;
+    }
+
+
+
+    .image-sub-fit-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 4pt;
+        background-color: rgb(245, 249, 248);
+    }
+
+    .Instructor-typeface {
+        font-family: 'AvantGardeMedium';
+        font-size: 24pt;
+    }
+
+    .input-button-style {
+        opacity: 0;
+        display: none;
+    }
+
+    .input-label-style {
+        border-radius: 12pt;
+        height: 24pt;
+        width: 24pt;
+        background-image: url(imagesrc/button.svg);
+        box-shadow: 0 6.4px 14.4px 0 rgba(0, 0, 0, 0.18), 0 1.2px 3.6px 0 rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+
+    .input-button-style:hover {
+        box-shadow: 0 25.6px 57.6px 0 rgba(0, 0, 0, 0.108), 0 4.8px 14.4px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .center-div {
+        width: 100%;
+        text-align: center;
+    }
+</style>
+
+<head>
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <!--link href="bootstrap.css" Srel="stylesheet" type="text/css" -->
+    <title>Neural Painter - Ink Style</title>
+</head>
+
+<body>
+
+    <div class='playground'>
+        <div class='texture-block'>
+            <img class='texture-image' src='/imagesrc/background-texture.jpg'>
+        </div>
+        <div class='background-images'>
+            <img class='image-src' src='/imagesrc/background-blured.png'>
+        </div>
+        <div class='opaque-grid'>
+            <div class='nav-bar'>
+                <div class="nav-left text-color-coal-black" onclick="location.href = '/'">Home</div>
+                <div class="nav-right text-color-coal-black" onclick="location.href = '/about'">About</div>
+                <div class="nav-right text-color-coal-black" onclick="location.href = '/credits'">Credits</div>
+            </div>
+            <div>
+                <div class='transfer-form-ground'>
+                    <div>
+                        <div class="Instructor-typeface text-color-dark-green">This is the Result.</div>
+                        <p class="height:2pt">
+                    </div>
+                    <div class='image-fit-div'>
+                        <div class="image-sub-fit-div">
+                            <img src="{{ resultPath }}" class="image-fit-style" />
+                        </div>
+                    </div>
+                    <div class='center-div'>
+                        <button class="button shape-pill text-color-white button-width"
+                            onclick="location.href = '{{goback}}'">Start
+                            a new
+                            one!
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

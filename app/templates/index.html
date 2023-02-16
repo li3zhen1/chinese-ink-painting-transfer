@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<style>
+    @font-face {
+        font-family: 'AvantGardeThin';
+        src: url(/fonts/Product-Sans-Regular.ttf) format("truetype");
+    }
+
+    @font-face {
+        font-family: 'AvantGardeBold';
+        src: url(/fonts/Product-Sans-Bold.ttf) format("truetype");
+    }
+
+    @font-face {
+        font-family: 'AvantGardeMedium';
+        src: url(/fonts/Product-Sans-Regular.ttf) format("truetype");
+    }
+
+    @media screen and (max-width: 960px) {
+        .button-size {
+            height: 42pt;
+            width: 140pt;
+        }
+
+        .header {
+            font-size: 60pt;
+            padding: 2pt;
+            font-family: 'AvantGardeBold';
+            float: inline-start;
+        }
+
+        .grid-back {
+            height: auto;
+            padding: 2px 2px 10px 2px;
+            width: 100%;
+            background-color: rgba(255,255,255,0.75);
+            border-radius: 4pt;
+        }
+    }
+
+    @media screen and (min-width: 960px) {
+        .button-size {
+            height: 48pt;
+            width: 160pt;
+        }
+
+        .header {
+            font-size: 82pt;
+            padding: 2pt;
+            font-family: 'AvantGardeBold';
+            float: inline-start;
+        }
+
+        .grid-back {
+            height: auto;
+            padding: 12px 0 2px 0;
+            width: 100%;
+            background-color: rgba(255,0,0,0);
+            border-radius: 4pt;
+        }
+    }
+
+
+    .text-color-coal-black {
+        color: rgb(20, 20, 20)
+    }
+
+
+    .header-descriptor {
+        max-width: 38rem;
+        font-size: 16pt;
+        font-family: 'AvantGardeThin';
+        padding: 2pt;
+        margin: 4pt;
+        line-height: 24pt;
+    }
+
+    .button {
+        font-size: 16pt;
+        font-family: 'AvantGardeMedium';
+
+        text-align: center;
+        line-height: 38px;
+
+        display: inline-block;
+        appearance: none;
+        cursor: pointer;
+        border: none;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition-property: all;
+        transition-property: all;
+        -webkit-transition-duration: .3s;
+        transition-duration: .3s;
+
+        background-color: rgba(42, 139, 136, 1);
+        border-collapse: collapse;
+        box-shadow: 0 6.4px 14.4px 0 rgba(72, 197, 160, 0.2), 0 1.2px 3.6px 0 rgba(100, 255, 229, 0.2);
+    }
+
+
+    .button:hover {
+        background-color: rgb(39, 156, 152);
+        text-decoration: none;
+        box-shadow: 0 25.6px 57.6px 0 rgba(72, 197, 160, 0.2), 0 4.8px 14.4px 0 rgba(100, 255, 229, 0.2);
+        outline: none;
+    }
+
+    .sub-button {
+        font-size: 16pt;
+        font-family: 'AvantGardeMedium';
+
+        text-align: center;
+        line-height: 38px;
+
+        display: inline-block;
+        appearance: none;
+        cursor: pointer;
+        border: 3px solid rgb(42, 139, 136);
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition-property: all;
+        transition-property: all;
+        -webkit-transition-duration: .3s;
+        transition-duration: .3s;
+        background: transparent;
+    }
+
+
+
+
+    .sub-button:hover {
+        background-color: rgba(39, 156, 152, 0.2);
+        text-decoration: none;
+        box-shadow: 0 25.6px 57.6px 0 rgba(72, 197, 160, 0.1), 0 4.8px 14.4px 0 rgba(100, 255, 229, 0.1);
+        outline: none;
+    }
+
+    .shape-pill {
+        margin: 12pt 4pt 8pt 4pt;
+        border-radius: 28pt;
+    }
+
+    .opaque-grid {
+        z-index: 2;
+        padding: 0 8% 0 8%;
+    }
+
+    .nav-bar {
+        height: 70pt;
+    }
+
+    .nav-left {
+        float: left;
+        font-size: 16pt;
+        font-family: 'AvantGardeMedium';
+        padding: 2pt;
+        margin: 16pt 0 0 4pt;
+        cursor: pointer;
+        opacity: 0.9;
+    }
+
+    .nav-right {
+        float: right;
+        font-size: 16pt;
+        font-family: 'AvantGardeThin';
+        padding: 2pt;
+        margin: 16pt 4pt 0 28pt;
+        cursor: pointer;
+        opacity: 0.5;
+    }
+
+    .nav-right:hover {
+        opacity: 1;
+    }
+
+    .nav-left:hover {
+        opacity: 1;
+    }
+
+
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .playground {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .background-images {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+        float: right;
+    }
+
+    .image-src {
+        float: right;
+        height: 100%;
+        width: auto;
+    }
+
+    .subheader {
+        font-size: 30pt;
+        font-family: 'AvantGardeMedium';
+        display: inline;
+        margin: 10pt 6pt 10pt 6pt;
+    }
+
+    .text-color-white {
+        color: white;
+    }
+
+    .text-color-dark-green {
+        color: rgb(42, 139, 136);
+    }
+
+    .placeholder {
+        display: none;
+        width: 10pt;
+        height: 10pt;
+    }
+
+    .texture-block {
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -2;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+        float: left;
+    }
+
+    .texture-image {
+        height: 100%;
+        width: 1949px;
+        float: left;
+    }
+</style>
+
+
+<head>
+    <header>
+        <title>Neural Painter</title>
+    </header>
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+</head>
+
+<body>
+    <div class='playground'>
+        <div class='texture-block'>
+            <img class='texture-image' src='/imagesrc/background-texture.jpg'>
+        </div>
+        <div class='background-images'>
+            <img class='image-src' src='/imagesrc/background.png'>
+        </div>
+        <div class='opaque-grid'>
+            <div class='nav-bar'>
+                <div class="nav-left text-color-coal-black" onclick="location.href = '/'">Home</div>
+                <div class="nav-right text-color-coal-black" onclick="location.href = '/about'">About</div>
+                <div class="nav-right text-color-coal-black" onclick="location.href = '/credits'">Credits</div>
+            </div>
+            <div class="grid-back">
+                <div class="height:auto width:2000pt">
+                    <div class="subheader text-color-dark-green">Style Transfer </div>
+                </div>
+                <div class="header text-color-coal-black">Neural<br>Painter</div>
+                <div class="header-descriptor text-color-coal-black">
+                    This project performs fast artistic style transfer that may work on various painting styles.
+                </div>
+                <button class="button button-size shape-pill text-color-white" onclick="location.href = '/start'">Any
+                    Style</button>
+                <button class="sub-button button-size shape-pill text-color-dark-green"
+                    onclick="location.href = '/ink'">Ink
+                    Style</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+</html>
