@@ -1,10 +1,11 @@
 # os
+import json
 from app import app
 import numpy as np
 import PIL
 import scipy
 import tensorflow as tf
-from flask import (Flask, flash, jsonify, make_response, redirect,
+from flask import (Flask, Response, flash, jsonify, make_response, redirect,
                    render_template, request, send_from_directory, url_for)
 
 
@@ -961,3 +962,66 @@ def inkstart():
 
         return render_template('result.html',  resultPath='../'+transferCaseName+'.jpg', goback='/ink')
     return render_template('inktransfer.html', form=inkForm)
+
+
+def make_json_response(data: dict):
+    return Response(json.dumps(data), mimetype='application/json')
+
+
+def make_json_error_response(error: str):
+    return make_json_response({"result": "error", "message": error})
+
+
+@app.route('/neuralpainter/ink', methods=['POST'])
+def neuralpainter_ink():  # put application's code here
+    file = request.files.get('file')
+    if file is not None:
+        transferCaseName = ''.join(random.sample(
+            string.ascii_letters + string.digits, 12))
+
+        environmentCreate(transferCaseName)
+        backslash_Content_Path = '/content.jpg'
+        contentPath_temp = CONTENT_DIR + transferCaseName + backslash_Content_Path
+        file.save(contentPath_temp)
+
+        edgeMask(contentPath_temp)
+
+        inkStylize(STYLE_DIR, CONTENT_DIR, OUTPUT_DIR, transferCaseName)
+
+        Oldify(OUTPUT_DIR+transferCaseName+'.jpg')
+
+        return Response(json.dumps({
+            "result": "success",
+            "src": transferCaseName+'.jpg'
+        }), mimetype='application/json')
+    
+    return make_json_error_response('Upload error.')
+
+@app.route('/neuralpainter/any', methods=['POST'])
+def neuralpainter_any():  # put application's code here
+    file = request.files.get('file')
+    styleImg = request.files.get('style')
+    if file is not None:
+        transferCaseName = ''.join(random.sample(
+            string.ascii_letters + string.digits, 12))
+        environmentCreate(transferCaseName)
+        backslash_Style_Path = '/style.jpg'
+        backslash_Content_Path = '/content.jpg'
+
+        contentImage_Uploaded = file
+        contentImage_Uploaded.save(
+            CONTENT_DIR + transferCaseName + backslash_Content_Path)
+
+        styleImage_Uploaded = styleImg
+        styleImage_Uploaded.save(
+            STYLE_DIR + transferCaseName + backslash_Style_Path)
+
+        Stylize(STYLE_DIR, CONTENT_DIR, OUTPUT_DIR, transferCaseName)
+        BilateralBlur(OUTPUT_DIR+transferCaseName+'.jpg', 24, 12)
+        ContrastEnhance(OUTPUT_DIR+transferCaseName+'.jpg')
+        return Response(json.dumps({
+            "result": "success",
+            "src": transferCaseName+'.jpg'
+        }), mimetype='application/json')
+    
+    return make_json_error_response('Upload error.')
